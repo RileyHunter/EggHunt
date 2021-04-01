@@ -1,0 +1,24 @@
+h1, h2 {
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000, -3px 0 0 #000;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.clue-wrapper {
+    text-align: center;
+    align-content: center;
+    height: 25%;
+    width: 60%;
+    padding: 10%;
+    margin: 10%;
+    background-color: antiquewhite;
+    border: 3px solid brown;
+    border-radius: 10px;
+    box-shadow: 10px 10px black;
+}
