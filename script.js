@@ -19,8 +19,8 @@ class Clue {
         return `
         <div class="clue-wrapper" id="clue-wrapper-${this.name}">
             <form>
-                <h2>Clue ${this.name}</h2>
-                <input type="text" class="clue-input" id="clue-input-${this.name}" placeholder="Enter Answer ${this.name} Here"/>
+                <a href="${this.name}.html"><h2>Puzzle: ${this.name}</h2></a>
+                <input type="text" class="clue-input" id="clue-input-${this.name}" placeholder="Enter Answer Here"/>
                 <input type="submit" onClick="fuckPoo('${this.name}'); return false;"
                 />
             </form>
@@ -33,10 +33,12 @@ class Clue {
     }
 }
 
+
+// Fuck off, Tim
 var clue_answers = [
-    new Clue('A', 'poos', '1234'),
-    new Clue('B', 'poos', '1235'),
-    new Clue('C', 'poos', '4321')
+    new Clue('Grillhelm', 'U0VORCBOVVRT', 'NTQ5'),
+    new Clue('Carnivaww', 'MTQyNjU=', 'MTk3'),
+    new Clue('Pickles', 'TVkgQVNT', 'NjY2')
 ]
 
 clue_answers.forEach(i => {
@@ -48,11 +50,11 @@ clue_answers.forEach(i => {
 var fuckPoo = (name) => {
     var clue = clue_answers.find(i => i.name === name);
     var val = document.getElementById(`clue-input-${name}`).value;
-    if (val == clue.correct_answer) {
-        alert(clue.response);
+    if (val == window.atob(clue.correct_answer)) {
+        alert(window.atob(clue.response));
     }
     else {
-        alert(`NOT ${val}, FUCK YOU`);
+        alert(`${val} is incorrect`);
     }
     return false;
 }
